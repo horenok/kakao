@@ -25,9 +25,4 @@ public class HttpCallService {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.exchange(url, method, entity,String.class);
     }
-
-    public ResponseEntity<String> httpRequest(URI url, HttpMethod method, HttpEntity<?> entity){
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.exchange(url, method, entity,String.class);
-    }
 }

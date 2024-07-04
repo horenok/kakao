@@ -42,12 +42,10 @@ public class MessageService extends HttpCallService{
 
         HttpEntity<?> messageRequestEntity = httpClientEntity(header, parameters);
 
-        String resultCode = "";
         ResponseEntity<String> response = httpRequest(MSG_SEND_SERVICE_URL, HttpMethod.POST, messageRequestEntity);
         JSONObject jsonData = new JSONObject(response.getBody());
-        resultCode = jsonData.get("result_code").toString();
 
-        return successCheck(resultCode);
+        return successCheck(jsonData.get("result_code").toString());
     }
 
     public boolean successCheck(String resultCode) {

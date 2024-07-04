@@ -24,4 +24,10 @@ public class BaseController {
             return "토큰발급 실패";
         }
     }
+
+    @GetMapping("/test")
+    public String serviceStart() {
+        customMessageService.sendMyMessage();
+        return "메세지 전송 테스트";
+    }
 }

@@ -1,2 +1,24 @@
 server:
   port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kakao
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 2
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 60000
+      max-lifetime: 300000
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: true
+    show-sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
